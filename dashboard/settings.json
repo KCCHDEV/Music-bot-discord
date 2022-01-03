@@ -1,0 +1,14 @@
+{
+    "website" : {
+      "support": "https://discord.gg/U7HAu7bmxn",
+      "domain":"https://Moon-cat-Music-New.yuichan.repl.co" 
+       },
+    "config": {
+        "http": {
+          "port": 80
+        },
+        "callback": "https://Moon-cat-Music-New.yuichan.repl.co/callback",
+        "clientID": "917574482204434473",
+        "secret": "I39sTvUS5XfSIBbGs1tX5xbOWodeE750"
+    }
+  }
