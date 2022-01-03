@@ -1,14 +1,14 @@
 {
     "website" : {
-      "support": "https://discord.gg/U7HAu7bmxn",
-      "domain":"https://Moon-cat-Music-New.yuichan.repl.co" 
+      "support": "https://discord.gg/wg4f5apcDc",
+      "domain":"http://localhost:8080" 
        },
     "config": {
         "http": {
-          "port": 80
+          "port": 8080
         },
-        "callback": "https://Moon-cat-Music-New.yuichan.repl.co/callback",
-        "clientID": "917574482204434473",
-        "secret": "I39sTvUS5XfSIBbGs1tX5xbOWodeE750"
+        "callback": "http://localhost:8080/callback",
+        "clientID": "915021697688666123",
+        "secret": "A7WXSHTE87aVwYOw5M9A5fZkZVu9XwuM"
     }
   }

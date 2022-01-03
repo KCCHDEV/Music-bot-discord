@@ -13,13 +13,15 @@ module.exports = (client) => {
                     client.commands.set(pull.name, pull);
                     amount++;
                 } else {
-                    console.log(file, `error -> missing a help.name, or help.name is not a string.`.brightRed);
+                    console.log(file, `ระบบมีปัณหา!!!`.brightRed);
                     continue;
                 }
                 if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach((alias) => client.aliases.set(alias, pull.name));
             }
         });
-        console.log(`โหลดคำสั้ง ${amount} คำสั้ง`.brightGreen);
+        console.log(`-------------------------------------------------`);
+        console.log(`กำลังอัพโหลดคำสั่ง หากท่านได้อัพเดทโปรดรออย่างน้อง 1ชั่วโมง`.brightRed);
+        console.log(`-------------------------------------------------`);
     } catch (e) {
         console.log(String(e.stack).bgRed)
     }

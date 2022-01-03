@@ -93,7 +93,7 @@ module.exports = {
 				await client.distube.playVoiceChannel(channel, Text, options)
 				//Edit the reply
 				interaction.editReply({
-					content: ` ? "👍 เพิ่ม" : "🎶 กำลังร้องเพลง"}: \`\`\`css\n${Text}\n\`\`\``,
+					content: `เพิ่มเพลง : \`\`\`css\n${Text}\n\`\`\``,
 					ephemeral: true
 				});
 			} catch (e) {
@@ -112,12 +112,3 @@ module.exports = {
 		}
 	}
 }
-/**
- * @INFO
- * Bot Coded by Tomato#6966 | https://github.com/Tomato6966/Discord-Js-Handler-Template
- * @INFO
- * Work for Milrato Development | https://milrato.eu
- * @INFO
- * Please mention Him / Milrato Development, when using this Code!
- * @INFO
- */

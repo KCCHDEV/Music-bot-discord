@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://cdn.discordapp.com/attachments/899580696010555393/904176738370723870/wallpaperflare.com_wallpaper.jpg"); 
+    background-color: #475857;
     color: rgb(113, 224, 224);
     height: 100%;
 }
@@ -28,7 +28,7 @@ body {
 }
 .nav-item a{
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(208, 255, 0);
 }
 .nav-item a:hover{
     color: #ffffff;

@@ -68,7 +68,7 @@ module.exports = (client) => {
               return i.reply({embeds: [new MessageEmbed()
                 .setColor(ee.wrongcolor)
                 .setFooter(ee.footertext, ee.footericon)
-                .setTitle(`${client.allEmojis.x} **You are not a DJ and not the Song Requester!**`)
+                .setTitle(`${client.allEmojis.x} **คุณไม่ใช่ Dj นะ**`)
                 .setDescription(`**DJ-ROLES:**\n${check_if_dj(client, i.member, client.distube.getQueue(i.guild.id).songs[0])}`)
               ],
               ephemeral: true});
@@ -85,7 +85,7 @@ module.exports = (client) => {
               //if the member is not in a channel, return
               if (!channel)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join a Voice Channel first!**`,
+                  content: `${client.allEmojis.x} **โปรดเข้าห้องเสียงก่อนใช้คำสั่งนะ**`,
                   ephemeral: true
                 })
               //get the player instance
@@ -93,14 +93,14 @@ module.exports = (client) => {
               //if no player available return aka not playing anything
               if (!queue || !newQueue.songs || newQueue.songs.length == 0) {
                 return i.reply({
-                  content: `${client.allEmojis.x} Nothing Playing yet`,
+                  content: `${client.allEmojis.x} หนูไม่ได้ร้องเพลงนะตอนนี้`,
                   ephemeral: true
                 })
               }
               //if not in the same channel as the player, return Error
               if (channel.id !== newQueue.voiceChannel.id)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join __my__ Voice Channel first! <#${channel.id}>**`,
+                  content: `${client.allEmojis.x} **เข้าห้องเสียงนี้มาก่อน <#${channel.id}>**`,
                   ephemeral: true
                 })
               //if ther is nothing more to skip then stop music and leave the Channel
@@ -110,8 +110,8 @@ module.exports = (client) => {
                     embeds: [new MessageEmbed()
                     .setColor(ee.color)
                     .setTimestamp()
-                    .setTitle(`⏹ **Stopped playing and left the Channel**`)
-                    .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                    .setTitle(`⏹ **หยุดร้องเพลงและออกจากห้องแล้วคะ**`)
+                    .setFooter(`💢 สั่งงานโดย: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
                   })
                   clearInterval(songEditInterval);
                   //edit the current song message
@@ -124,8 +124,8 @@ module.exports = (client) => {
                 embeds: [new MessageEmbed()
                   .setColor(ee.color)
                   .setTimestamp()
-                  .setTitle(`⏭ **Skipped to the next Song!**`)
-                  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                  .setTitle(`⏭ **ข้ามไปเพลงต่อไป**`)
+                  .setFooter(`💢 ใช้หนูโดย: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
               })
             }
             //stop
@@ -136,14 +136,14 @@ module.exports = (client) => {
               //if the member is not in a channel, return
               if (!channel)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join a Voice Channel first!**`,
+                  content: `${client.allEmojis.x} **เข้าห้องเสียงก่อนใช้คำสั้งนะคะ**`,
                   ephemeral: true
                 })
 
               //if not in the same channel as the player, return Error
               if (channel.id !== newQueue.voiceChannel.id)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join __my__ Voice Channel first! <#${channel.id}>**`,
+                  content: `${client.allEmojis.x} **เข้าห้องนี่มานะคะ <#${channel.id}>**`,
                   ephemeral: true
                 })
                 //stop the track
@@ -151,8 +151,8 @@ module.exports = (client) => {
                   embeds: [new MessageEmbed()
                     .setColor(ee.color)
                     .setTimestamp()
-                    .setTitle(`⏹ **Stopped playing and left the Channel!**`)
-                    .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                    .setTitle(`⏹ **หยุดร้องเพลงและออกจากห้องแล้ว**`)
+                    .setFooter(`💢 รับฟังแล้วทำตาม: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
                 })
                 clearInterval(songEditInterval);
                 //edit the current song message
@@ -166,13 +166,13 @@ module.exports = (client) => {
               //if the member is not in a channel, return
               if (!channel)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join a Voice Channel first!**`,
+                  content: `${client.allEmojis.x} **เข้าห้องก่อนสิ**`,
                   ephemeral: true
                 })
               //if not in the same channel as the player, return Error
               if (channel.id !== newQueue.voiceChannel.id)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join __my__ Voice Channel first! <#${channel.id}>**`,
+                  content: `${client.allEmojis.x} **เข้าห้องที่มัหนูอยู่ก่อน <#${channel.id}>**`,
                   ephemeral: true
                 })
               if (newQueue.playing) {
@@ -185,8 +185,8 @@ module.exports = (client) => {
                   embeds: [new MessageEmbed()
                     .setColor(ee.color)
                     .setTimestamp()
-                    .setTitle(`⏸ **Paused!**`)
-                    .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                    .setTitle(`⏸ **พักการร้องเพลงแล้ว**`)
+                    .setFooter(`💢 รับทราบ : ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
                 })
               } else {
                 //pause the player
@@ -199,8 +199,8 @@ module.exports = (client) => {
                   embeds: [new MessageEmbed()
                     .setColor(ee.color)
                     .setTimestamp()
-                    .setTitle(`▶️ **Resumed!**`)
-                    .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                    .setTitle(`▶️ **ร้องเพลงต่อแล้ว**`)
+                    .setFooter(`💢 รับทราบ: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
                 })
               }
             }
@@ -212,13 +212,13 @@ module.exports = (client) => {
               //if the member is not in a channel, return
               if (!channel)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join a Voice Channel first!**`,
+                  content: `${client.allEmojis.x} **โปรดเข้าห้องเสียงก่อนสิ**`,
                   ephemeral: true
                 })
               //if not in the same channel as the player, return Error
               if (channel.id !== newQueue.voiceChannel.id)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join __my__ Voice Channel first! <#${channel.id}>**`,
+                  content: `${client.allEmojis.x} **เข้าห้องนี้สิ <#${channel.id}>**`,
                   ephemeral: true
                 })
               //pause the player
@@ -239,8 +239,8 @@ module.exports = (client) => {
                 embeds: [new MessageEmbed()
                   .setColor(ee.color)
                   .setTimestamp()
-                  .setTitle(`${newQueue.autoplay ? `${client.allEmojis.check_mark} **Enabled Autoplay**`: `${client.allEmojis.x} **Disabled Autoplay**`}`)
-                  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                  .setTitle(`${newQueue.autoplay ? `${client.allEmojis.check_mark} **เปิดระบบ Autoplay**`: `${client.allEmojis.x} **ปิดระบบ Autoplay**`}`)
+                  .setFooter(`💢 สั่งงานโดย: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
                 })
             }
             //Shuffle
@@ -251,13 +251,13 @@ module.exports = (client) => {
               //if the member is not in a channel, return
               if (!channel)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join a Voice Channel first!**`,
+                  content: `${client.allEmojis.x} **-**`,
                   ephemeral: true
                 })
               //if not in the same channel as the player, return Error
               if (channel.id !== newQueue.voiceChannel.id)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join __my__ Voice Channel first! <#${channel.id}>**`,
+                  content: `${client.allEmojis.x} **- <#${channel.id}>**`,
                   ephemeral: true
                 })
               //pause the player
@@ -267,8 +267,8 @@ module.exports = (client) => {
                 embeds: [new MessageEmbed()
                   .setColor(ee.color)
                   .setTimestamp()
-                  .setTitle(`🔀 **Shuffled ${newQueue.songs.length} Songs!**`)
-                  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                  .setTitle(`-`)
+                  .setFooter(`💢 ใช้งาน: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
               })
             }
             //Songloop
@@ -279,13 +279,13 @@ module.exports = (client) => {
               //if the member is not in a channel, return
               if (!channel)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join a Voice Channel first!**`,
+                  content: `${client.allEmojis.x} **เข้าห้องเสียงก่อนสิ**`,
                   ephemeral: true
                 })
               //if not in the same channel as the player, return Error
               if (channel.id !== newQueue.voiceChannel.id)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join __my__ Voice Channel first! <#${channel.id}>**`,
+                  content: `${client.allEmojis.x} **เข้าห้องนี้ <#${channel.id}> ก่อนนะ**`,
                   ephemeral: true
                 })
               //Disable the Repeatmode
@@ -300,8 +300,8 @@ module.exports = (client) => {
                 embeds: [new MessageEmbed()
                   .setColor(ee.color)
                   .setTimestamp()
-                  .setTitle(`${newQueue.repeatMode == 1 ? `${client.allEmojis.check_mark} **Enabled Song-Loop**`: `${client.allEmojis.x} **Disabled Song-Loop**`}`)
-                  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                  .setTitle(`${newQueue.repeatMode == 1 ? `${client.allEmojis.check_mark} **เปิดระบบ Song-Loop**`: `${client.allEmojis.x} **ปิดระบบ Song-Loop**`}`)
+                  .setFooter(`💢 สั่งงานโดย: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
               })
               var data = receiveQueueData(client.distube.getQueue(queue.id), newQueue.songs[0])
               currentSongPlayMsg.edit(data).catch((e) => {
@@ -316,13 +316,13 @@ module.exports = (client) => {
               //if the member is not in a channel, return
               if (!channel)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join a Voice Channel first!**`,
+                  content: `${client.allEmojis.x} **โปรดเข้าเสียงก่อนนะขอร้อง**`,
                   ephemeral: true
                 })
               //if not in the same channel as the player, return Error
               if (channel.id !== newQueue.voiceChannel.id)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join __my__ Voice Channel first! <#${channel.id}>**`,
+                  content: `${client.allEmojis.x} **เข้าห้อง <#${channel.id}> ก่อนนะ**`,
                   ephemeral: true
                 })
               //Disable the Repeatmode
@@ -337,8 +337,8 @@ module.exports = (client) => {
                 embeds: [new MessageEmbed()
                   .setColor(ee.color)
                   .setTimestamp()
-                  .setTitle(`${newQueue.repeatMode == 2 ? `${client.allEmojis.check_mark} **Enabled Queue-Loop**`: `${client.allEmojis.x} **Disabled Queue-Loop**`}`)
-                  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                  .setTitle(`${newQueue.repeatMode == 2 ? `${client.allEmojis.check_mark} **เปิดระบบ Queue-Loop**`: `${client.allEmojis.x} **ปิดระบบ Queue-Loop**`}`)
+                  .setFooter(`💢 ใช้งานโดย: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
                 })
               var data = receiveQueueData(client.distube.getQueue(queue.id), newQueue.songs[0])
               currentSongPlayMsg.edit(data).catch((e) => {
@@ -353,13 +353,13 @@ module.exports = (client) => {
               //if the member is not in a channel, return
               if (!channel)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join a Voice Channel first!**`,
+                  content: `${client.allEmojis.x} **ไม่อยู่ในห้องเสียงอ่ะ**`,
                   ephemeral: true
                 })
               //if not in the same channel as the player, return Error
               if (channel.id !== newQueue.voiceChannel.id)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join __my__ Voice Channel first! <#${channel.id}>**`,
+                  content: `${client.allEmojis.x} **เข้ามาอยู่กับหนูก่อนสิในห้อง <#${channel.id}>**`,
                   ephemeral: true
                 })
               let seektime = newQueue.currentTime + 10;
@@ -370,8 +370,8 @@ module.exports = (client) => {
                 embeds: [new MessageEmbed()
                   .setColor(ee.color)
                   .setTimestamp()
-                  .setTitle(`⏩ **Forwarded the song for \`10 Seconds\`!**`)
-                  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                  .setTitle(`⏩ **ย้อนเวลา \`10 Seconds\`!**`)
+                  .setFooter(`💢 ใช้งานโดย: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
               })
               var data = receiveQueueData(client.distube.getQueue(queue.id), newQueue.songs[0])
               currentSongPlayMsg.edit(data).catch((e) => {
@@ -386,13 +386,13 @@ module.exports = (client) => {
               //if the member is not in a channel, return
               if (!channel)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join a Voice Channel first!**`,
+                  content: `${client.allEmojis.x} **เข้าห้องเสียงก่อน**`,
                   ephemeral: true
                 })
               //if not in the same channel as the player, return Error
               if (channel.id !== newQueue.voiceChannel.id)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join __my__ Voice Channel first! <#${channel.id}>**`,
+                  content: `${client.allEmojis.x} **เข้ามาในนี้สิ <#${channel.id}>**`,
                   ephemeral: true
                 })
               let seektime = newQueue.currentTime - 10;
@@ -404,8 +404,8 @@ module.exports = (client) => {
                 embeds: [new MessageEmbed()
                   .setColor(ee.color)
                   .setTimestamp()
-                  .setTitle(`⏪ **Rewinded the song for \`10 Seconds\`!**`)
-                  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+                  .setTitle(`⏪ **ย้อนกลับเพลง \`10 Seconds\`!**`)
+                  .setFooter(`💢 โดย: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
               })
               var data = receiveQueueData(client.distube.getQueue(queue.id), newQueue.songs[0])
               currentSongPlayMsg.edit(data).catch((e) => {
@@ -419,28 +419,28 @@ module.exports = (client) => {
               //if the member is not in a channel, return
               if (!channel)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join a Voice Channel first!**`,
+                  content: `${client.allEmojis.x} **เข้าห้องเสียงก่อนสิจ๊ะ**`,
                   ephemeral: true
                 })
               //if not in the same channel as the player, return Error
               if (channel.id !== newQueue.voiceChannel.id)
                 return i.reply({
-                  content: `${client.allEmojis.x} **Please join __my__ Voice Channel first! <#${channel.id}>**`,
+                  content: `${client.allEmojis.x} **เข้ามาใน <#${channel.id}> นี้ก่อนนะ**`,
                   ephemeral: true
                 })
                 return i.reply({
-                  content: `${client.allEmojis.x} **Lyrics are disabled!**\n> *Due to legal Reasons, Lyrics are disabled and won't work for an unknown amount of time!* :cry:`,
+                  content: `${client.allEmojis.x} **Lyrics ถูกปิดถาวร**\n> *ขอโทษนะแต่เรามีปัญหากับ youtube ทำให้ระบบนี้ใช้ไม่ได้* :cry:`,
                   ephemeral: true
                 });
               let embeds = [];
               await ksoft.lyrics.get(newQueue.songs[0].name).then(
                 async track => {
-                    if (!track.lyrics) return i.reply({content: `${client.allEmojis.x} **No Lyrics Found!** :cry:`, ephemeral: true});
+                    if (!track.lyrics) return i.reply({content: `${client.allEmojis.x} **ไม่มี Lyrics** :cry:`, ephemeral: true});
                     lyrics = track.lyrics;
                 embeds = lyricsEmbed(lyrics, newQueue.songs[0]);
               }).catch(e=>{
                 console.log(e)
-                return i.reply({content: `${client.allEmojis.x} **No Lyrics Found!** :cry:\n${String(e).substr(0, 1800)}`, ephemeral: true});
+                return i.reply({content: `${client.allEmojis.x} **ไม่มี Lyrics** :cry:\n${String(e).substr(0, 1800)}`, ephemeral: true});
               })
               i.reply({
                 embeds: embeds, ephemeral: true
@@ -451,7 +451,7 @@ module.exports = (client) => {
           console.error(error)
         }
       })
-      .on(`addSong`, (queue, song) => queue.textChannel.send({
+      .on(`เพื่อเพลง`, (queue, song) => queue.textChannel.send({
         embeds: [
           new MessageEmbed()
           .setColor(ee.color)
@@ -459,13 +459,13 @@ module.exports = (client) => {
           .setFooter("💯 " + song.user.tag, song.user.displayAvatarURL({
             dynamic: true
           }))
-          .setTitle(`${client.allEmojis.check_mark} **Song added to the Queue!**`)
-          .setDescription(`👍 Song: [\`${song.name}\`](${song.url})  -  \`${song.formattedDuration}\``)
-          .addField(`⌛ **Estimated Time:**`, `\`${queue.songs.length - 1} song${queue.songs.length > 0 ? "s" : ""}\` - \`${(Math.floor((queue.duration - song.duration) / 60 * 100) / 100).toString().replace(".", ":")}\``)
-          .addField(`🌀 **Queue Duration:**`, `\`${queue.formattedDuration}\``)
+          .setTitle(`${client.allEmojis.check_mark} **เพิ่มเพลงเข้าสู่ระบบแล้ว**`)
+          .setDescription(`👍 เพลง: [\`${song.name}\`](${song.url})  -  \`${song.formattedDuration}\``)
+          .addField(`⌛ **เวลาในการเล่นทั้งหมด:**`, `\`${queue.songs.length - 1} เพลง${queue.songs.length > 0 ? "s" : ""}\` - \`${(Math.floor((queue.duration - song.duration) / 60 * 100) / 100).toString().replace(".", ":")}\``)
+          .addField(`🌀 **เพลงทั้งหมด:**`, `\`${queue.formattedDuration}\``)
         ]
       }))
-      .on(`addList`, (queue, playlist) => queue.textChannel.send({
+      .on(`เพื่มเข้าสู่ระบบแล้ว`, (queue, playlist) => queue.textChannel.send({
         embeds: [
           new MessageEmbed()
           .setColor(ee.color)
@@ -473,31 +473,31 @@ module.exports = (client) => {
           .setFooter("💯" + playlist.user.tag, playlist.user.displayAvatarURL({
             dynamic: true
           }))
-          .setTitle(`${client.allEmojis.check_mark} **Playlist added to the Queue!**`)
+          .setTitle(`${client.allEmojis.check_mark} **Playlist ถูกเพิ่มแล้ว**`)
           .setDescription(`👍 Playlist: [\`${playlist.name}\`](${playlist.url ? playlist.url : ""})  -  \`${playlist.songs.length} Song${playlist.songs.length > 0 ? "s" : ""}\``)
-          .addField(`⌛ **Estimated Time:**`, `\`${queue.songs.length - - playlist.songs.length} song${queue.songs.length > 0 ? "s" : ""}\` - \`${(Math.floor((queue.duration - playlist.duration) / 60 * 100) / 100).toString().replace(".", ":")}\``)
-          .addField(`🌀 **Queue Duration:**`, `\`${queue.formattedDuration}\``)
+          .addField(`⌛ **เวลาในการเล่นทั้งหมด:**`, `\`${queue.songs.length - - playlist.songs.length} song${queue.songs.length > 0 ? "s" : ""}\` - \`${(Math.floor((queue.duration - playlist.duration) / 60 * 100) / 100).toString().replace(".", ":")}\``)
+          .addField(`🌀 **เพลงทั้งหมด:**`, `\`${queue.formattedDuration}\``)
         ]
       }))
-      // DisTubeOptions.searchSongs = true
-      .on(`searchResult`, (message, result) => {
+       //DisTubeOptions.searchSongs = true
+      .on(`ผลการค้นหา`, (message, result) => {
         let i = 0
-        message.channel.send(`**Choose an option from below**\n${result.map((song) => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join(`\n`)}\n*Enter anything else or wait 60 seconds to cancel*`)
+        message.channel.send(`**เลือกตัวเลือกจากด้านล่าง**\n${result.map((song) => `**${++i}**. ${song.name} - \`${song.formattedDuration}\``).join(`\n`)}\n*ป้อนอย่างอื่นหรือรอ 60 วินาทีเพื่อยกเลิก*`)
       })
-      // DisTubeOptions.searchSongs = true
-      .on(`searchCancel`, message => message.channel.send(`Searching canceled`).catch((e)=>console.log(e)))
+       //DisTubeOptions.searchSongs = true
+      .on(`การค้นหาถูกยกเลิก`, message => message.channel.send(`Searching canceled`).catch((e)=>console.log(e)))
       .on(`error`, (channel, e) => {
         channel.send(`An error encountered: ${e}`).catch((e)=>console.log(e))
         console.error(e)
       })
-      .on(`empty`, channel => channel.send(`Voice channel is empty! Leaving the channel...`).catch((e)=>console.log(e)))
-      .on(`searchNoResult`, message => message.channel.send(`No result found!`).catch((e)=>console.log(e)))
+      .on(`empty`, channel => channel.send(`....ห้องไม่มีคนอยู่อะ หนูไปล่ะ`).catch((e)=>console.log(e)))
+      .on(`searchNoResult`, message => message.channel.send(`ค้นหาไม่เจอ!`).catch((e)=>console.log(e)))
       .on(`finishSong`, (queue, song) => {
         var embed = new MessageEmbed().setColor(ee.color)
-        .setAuthor(`${song.name}`, "https://cdn.discordapp.com/attachments/883978730261860383/883978741892649000/847032838998196234.png", song.url)
+        .setAuthor(`${song.name}`, "https://c.tenor.com/vgH7rtApnPUAAAAM/jinx-flipzflops.gif", song.url)
         .setDescription(`-`)
         .setThumbnail(`https://img.youtube.com/vi/${song.id}/mqdefault.jpg`)
-        .setFooter(`💯 ${song.user.tag}\n⛔️ SONG ENDED!`, song.user.displayAvatarURL({
+        .setFooter(`💯 ${song.user.tag}\n⛔️ เพลงจบแล้ว`, song.user.displayAvatarURL({
           dynamic: true
         }));
         queue.textChannel.messages.fetch(PlayerMap.get(`currentmsg`)).then(currentSongPlayMsg=>{
@@ -512,8 +512,8 @@ module.exports = (client) => {
         queue.textChannel.send({
           embeds: [
             new MessageEmbed().setColor(ee.color).setFooter(ee.footertext, ee.footericon)
-            .setTitle("⛔️ LEFT THE CHANNEL")
-            .setDescription(":headphones: **There are no more songs left**")
+            .setTitle("⛔️ ออกจากห้องแล้วนะ")
+            .setDescription(":headphones: **ไม่มีเพลงเล่นต่อแล้ว**")
             .setTimestamp()
           ]
         })
@@ -541,9 +541,9 @@ module.exports = (client) => {
     var djs = client.settings.get(newQueue.id, `djroles`);
     if(!djs || !Array.isArray(djs)) djs = [];
     else djs = djs.map(r => `<@&${r}>`);
-    if(djs.length == 0 ) djs = "`not setup`";
+    if(djs.length == 0 ) djs = "`ไม่ได้ตั้งค่า`";
     else djs.slice(0, 15).join(", ");
-    if(!newTrack) return new MessageEmbed().setColor(ee.wrongcolor).setTitle("NO SONG FOUND?!?!")
+    if(!newTrack) return new MessageEmbed().setColor(ee.wrongcolor).setTitle("ไม่รู้จักเพลง?!?!")
     var embed = new MessageEmbed().setColor(ee.color)
       .setDescription(`เข้าไปดู list เพลงผ่าน [ **DASHBOARD** Live!](${require("../dashboard/settings.json").website.domain}/queue/${newQueue.id})`)
       .addField(`💡 ใช้งานโดย:`, `>>> ${newTrack.user}`, true)
@@ -606,13 +606,4 @@ module.exports = (client) => {
     };
   }
 };
-/**
- * 
- * @INFO
- * Bot Coded by Tomato#6966 | https://discord.gg/milrato
- * @INFO
- * Work for Milrato Development | https://milrato.eu
- * @INFO
- * Please mention Him / Milrato Development, when using this Code!
- * @INFO
- */
+

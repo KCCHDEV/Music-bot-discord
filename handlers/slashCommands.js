@@ -3,22 +3,25 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const config = require("../botconfig/config.json");
 const dirSetup = [{
 			"Folder": "Info", "CmdName": "info",
-			"CmdDescription": "Grant specific Information about something!"
+			"CmdDescription": "ข้อมูล" //หัวข้อคำสั่ง info
 	},{
 			"Folder": "Settings", "CmdName": "settings",
-			"CmdDescription": "Adjust the Settings of the Bot!"
+			"CmdDescription": "ตั้งค่า Bot ใน server คุณ" //หัวข้อคำสั่ง Settings
 	},{
 			"Folder": "Music", "CmdName": "music",
-			"CmdDescription": "Playing/Queuing Music"
+			"CmdDescription": "คำสั่งระบบเพลง" //หัวข้อคำสั่ง music
 	},{
 			"Folder": "Queue", "CmdName": "queue",
-			"CmdDescription": "Queue Commands"
+			"CmdDescription": "คำสั่ง list เพลง" 
 	},{
-			"Folder": "Song", "CmdName": "song",
-			"CmdDescription": "Song specific Commands"
+			"Folder": "Mod", "CmdName": "Mod",
+			"CmdDescription": "คำสั่ง mod"
+	},{
+			"Folder": "Fun", "CmdName": "Fun",
+			"CmdDescription": "คำสั่ง Fun"
 	},{     
 		"Folder": "Filter", "CmdName": "filter",
-		"CmdDescription": "Add Filters to your Music"
+		"CmdDescription": "คำสั่ง Filter"
 	}];
 module.exports = (client) => {
     try {
@@ -72,7 +75,7 @@ module.exports = (client) => {
 												.addChoices(option.IntChoices.choices.map(c=> [String(c[0]).replace(/\s+/g, '_').toLowerCase(),parseInt(c[1])] )),
 											)
 										} else {
-											console.log(`A Option is missing the Name or/and the Description of ${pull.name}`)
+											console.log(`ตัวเลือกไม่มีชื่อหรือ/และคำอธิบายของ ${pull.name}`)
 										}
 									}
 								}
@@ -80,7 +83,7 @@ module.exports = (client) => {
 							})
 							client.slashCommands.set(String(cmdSetup.CmdName).replace(/\s+/g, '_').toLowerCase() + pull.name, pull)
 						} else {
-							console.log(file, `error -> missing a help.name, or help.name is not a string.`.brightRed);
+							console.log(file, `error -> help.name, หริอ help.name ไม่มีค่านี้หรือไม่สามารถใช้เป็นค่าได้`.brightRed);
 							continue;
 						}
 					}
@@ -88,7 +91,7 @@ module.exports = (client) => {
 					allCommands.push(subCommand.toJSON());
 				} 
 				else {
-					return console.log(`The Subcommand-Folder ${dir} is not in the dirSetup Configuration!`);
+					return console.log(`โฟลเดอร์คำสั่งย่อย ${dir} ไม่อยู่ในการกำหนดค่า dirSetup!`);
 				}
 			} else {
 				let pull = require(`../slashCommands/${dir}`);
@@ -127,7 +130,7 @@ module.exports = (client) => {
 										.addChoices(option.IntChoices.choices.map(c=> [String(c[0]).replace(/\s+/g, '_').toLowerCase(),parseInt(c[1])] )),
 									)
 								} else {
-									console.log(`A Option is missing the Name or/and the Description of ${pull.name}`)
+									console.log(`ตัวเลือกไม่มีชื่อหรือ/และคำอธิบายของ ${pull.name}`)
 								}
 							}
 						}
@@ -135,7 +138,7 @@ module.exports = (client) => {
 						client.slashCommands.set("normal" + pull.name, pull)
 				} 
 				else {
-					console.log(file, `error -> missing a help.name, or help.name is not a string.`.brightRed);
+					console.log(file, `error -> help.name, หริอ help.name ไม่มีค่านี้หรือไม่สามารถใช้เป็นค่าได้`.brightRed);
 				}
 			}
         });
@@ -147,7 +150,7 @@ module.exports = (client) => {
 				.then(slashCommandsData => {
 					client.slashCommandsData = slashCommandsData;
 					console.log(`${slashCommandsData.size} slashCommands ${`(With ${slashCommandsData.map(d => d.options).flat().length} Subcommands)`.green} Loaded for all: ${`All possible Guilds`.underline}`.brightGreen); 
-					console.log(`Because u are Using Global Settings, it can take up to 1 hour until the Commands are changed!`.bold.yellow)
+					console.log(`คุณอาจต้องรออย่างน้อย 1 ชั่วโมงเพื่อให้คำสั่งทำงาน แต่ปกติจะไม่นาน`.bold.yellow)
 				}).catch((e)=>{});
 			} else {
 				client.guilds.cache.map(g => g).forEach(async (guild) => {
@@ -179,16 +182,7 @@ module.exports = (client) => {
 			}
 		})
 		
-    } catch (e) {
+    } catch (e) {1
         console.log(String(e.stack).bgRed)
     }
 };
-/**
- * @INFO
- * Bot Coded by Tomato#6966 | https://discord.gg/milrato
- * @INFO
- * Work for Milrato Development | https://milrato.eu
- * @INFO
- * Please mention Him / Milrato Development, when using this Code!
- * @INFO
- */

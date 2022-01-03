@@ -74,7 +74,7 @@ module.exports = {
           new MessageEmbed()
           .setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${client.allEmojis.check_mark} **The new Default-Filter${args.length > 0 ? "s are": " is"}:**`)
+          .setTitle(`${client.allEmojis.check_mark} **filter เริ่มต้น${args.length > 0 ? "s are": " is"}:**`)
           .setDescription(`${args.map(a=>`\`${a}\``).join(", ")}`)
         ],
       })
@@ -83,12 +83,3 @@ module.exports = {
     }
   }
 }
-/**
- * @INFO
- * Bot Coded by Tomato#6966 | https://github.com/Tomato6966/Discord-Js-Handler-Template
- * @INFO
- * Work for Milrato Development | https://milrato.eu
- * @INFO
- * Please mention Him / Milrato Development, when using this Code!
- * @INFO
- */

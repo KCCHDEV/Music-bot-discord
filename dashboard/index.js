@@ -320,12 +320,24 @@ module.exports = client => {
       });
     })
 
-    /**
-     * @START THE WEBSITE
-     */
     //START THE WEBSITE ON THE DEFAULT PORT (80)
     const http = require(`http`).createServer(app);
     http.listen(settings.config.http.port, () => {
-        console.log(`[${settings.website.domain}]: HTTP-Website running on ${settings.config.http.port} port.`)
-    });
+        console.log('----------------------------------------------------------------------------')
+        console.log(`[${settings.website.domain}`)
+        console.log(`website is running on port ${settings.config.http.port}`)
+        console.log('----------------------------------------------------------------------------')
+        console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        console.log('----------------------------------------------------------------------------')
+        console.log(`[${settings.website.domain}`)
+        console.log(`website is running on port ${settings.config.http.port}`)
+        console.log('----------------------------------------------------------------------------')
+        console.log('<------------------------------------->')
+        console.log(' อัพเดท code วันที่ 29 เดือน ธันวาคม ปี 2564')
+        console.log('<------------------------------------->')
+        console.log("VVV ห้ามลบนะคับ VVV")
+        console.log("Code By Tomato6966")
+        console.log("EDIT code by KCCH dev")
+        console.log("Fix bug by KCCH dev")
+      });
 }

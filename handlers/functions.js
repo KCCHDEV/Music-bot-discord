@@ -780,10 +780,11 @@ function onCoolDown(message, command) {
    */
   function change_status(client) {
     try {
-      client.user.setActivity(`/ | ${client.guilds.cache.size} guild`, {
-        type: "PLAYING", 
+      client.user.setActivity(`กำลังดูแล ${client.guilds.cache.size} Server`, {
+        type: "PLAYING",
       });
     } catch (e) {
       console.log(String(e.stack).bgRed)
     }
   }
+

@@ -4,8 +4,8 @@ module.exports = async (client) => {
     try {
         try {
             const stringlength = 69;
-            console.log("\n")
-            console.log(`เริ่มการทำงาน`)
+            console.log(`Server เริ่มการทำงาน`)
+            console.log(`Good luck Bot`)
         } catch {
             /* */ }
         let amount = 0;
@@ -27,8 +27,9 @@ module.exports = async (client) => {
         console.log(`โหลด Events ${amount} Events`.brightGreen);
         try {
             const stringlength2 = 69;
-            console.log("\n")
+            console.log("---------------------")
             console.log(`กำลัง Login Bot โปรดรอ`)
+            console.log("---------------------")
         } catch {
             /* */ }
     } catch (e) {

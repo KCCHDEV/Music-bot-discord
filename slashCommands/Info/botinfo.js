@@ -51,7 +51,7 @@ module.exports = {
                         .addField("\u200b", `\u200b`, true)
                         .addField("💻 Platform", `\`\`${os.platform()}\`\``, true)
                         .addField("API Latency", `\`${client.ws.ping}ms\``, true)
-                        .setFooter("-");
+                        .setFooter("MayuChan :3");
                     interaction.reply({
                         embeds: [botinfo]
                     });
@@ -85,7 +85,7 @@ module.exports = {
                         .addField("\u200b", `\u200b`, true)
                         .addField("💻 Platform", `\`\`${os.platform()}\`\``, true)
                         .addField("API Latency", `\`${client.ws.ping}ms\``, true)
-                        .setFooter("-");
+                        .setFooter("MayuChan :3");
                         interaction.reply({
                         embeds: [botinfo]
                     });
@@ -156,12 +156,3 @@ module.exports = {
         }
     }
 }
-/**
- * @INFO
- * Bot Coded by Tomato#6966 | https://github.com/Tomato6966/discord-js-lavalink-Music-Bot-erela-js
- * @INFO
- * Work for Milrato Development | https://milrato.eu
- * @INFO
- * Please mention Him / Milrato Development, when using this Code!
- * @INFO
- */

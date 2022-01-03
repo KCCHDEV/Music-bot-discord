@@ -2,15 +2,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="icon" type="image/png" href="<%= botClient.user.displayAvatarURL({size: 128}) %>">
 
-    <nav class="navbar navbar-expand-lg justify-content-center navbar-dark" style="background-color: #5663f7;">
+    <nav class="navbar navbar-expand-lg justify-content-center navbar-dark" style="background-color: #9d81a5;">
         <div class="container">
-            <a class="navbar-brand" href="/" style="text-decoration: none;color:white">
+            <a class="navbar-brand" href="/" style="text-decoration: none;color:rgb(253, 214, 214)">
                 <img src="<%= botClient.user.displayAvatarURL({size: 4096}) %>" alt="Logo" 
                 class="d-inline-block align-top"
                 >
             </a> <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a href="/commands">คำสั่ง</a>
+                    <a href="/commands">Commands</a>
                 </li>
                 <li class="nav-item">
                     <a href="https://discord.com/api/oauth2/authorize?client_id=<%= botClient.user.id %>&permissions=8&scope=bot%20applications.commands" target="_blank">
@@ -31,12 +31,12 @@
                 <li class="nav-item" >
                     <% if(user && user.id) { %>
                         <button class="btn btn-danger btn-sm" 
-                        style="letter-spacing: 0.1em;font-weight: 350;width: 100%;"
-                        onclick="location.href='/logout'" type="button"><img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png", style="width: 50px;margin-bottom:3%;"alt="LOGO"> LOGOUT!</button>
+                        style="letter-spacing: 0.1em;font-weight: 200;width: 125%;"
+                        onclick="location.href='/logout'" type="button"><img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png", style="width: 50px;margin-bottom:3%;"alt="LOGO"> ออกจากระบบ</button>
                     <% }else { %>
                         <button class="btn btn-success btn-sm" 
-                        style="letter-spacing: 0.1em;font-weight: 350;width: 100%;"
-                        onclick="location.href='/login'" type="button"><span class="iconify" data-icon="simple-icons:discord"></span> Login</button>
+                        style="letter-spacing: 0.1em;font-weight: 200;width: 125%;"
+                        onclick="location.href='/login'" type="button"><span class="iconify" data-icon="simple-icons:discord"></span> เข้าสู่ระบบ</button>
                     <% }%>
                 </li>
             </ul>
@@ -51,30 +51,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">หน้าหลัก</a>
+          <a class="nav-link active" aria-current="page" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">INFO</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.youtube.com/channel/UCCwhaAbi3t6WthXOQaakYEw">YT KCCH</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            อื่นๆ
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="https://youtu.be/dQw4w9WgXcQ">code Free</a></li>
-            <li><a class="dropdown-item" href="https://discord.com/oauth2/authorize?client_id=899915019783901225&permissions=8&scope=applications.commands%20bot">𝗣𝗮𝗿𝘁𝗻𝗲𝗿 𝗕𝗼𝘁</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="https://discord.gg/vwVFWTUUze">𝗣𝗮𝗿𝘁𝗻𝗲𝗿 Discord</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="https://youtu.be/dQw4w9WgXcQ" tabindex="-1" aria-disabled="true"></a>
+          <a class="nav-link" href="https://www.youtube.com/channel/UCCwhaAbi3t6WthXOQaakYEw">KCCH DEV</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">ค้นหา</button>
-      </form>
     </div>
   </div>
 </nav>
