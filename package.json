@@ -1,24 +1,24 @@
 {
   "dependencies": {
-    "@discordjs/voice": "^0.7.5",
-    "@distube/soundcloud": "^1.0.0",
-    "@distube/spotify": "^1.0.0",
-    "@distube/ytdl-core": "^4.9.4",
+    "@discordjs/opus": "^0.7.0",
+    "@discordjs/voice": "^0.8.0",
+    "@distube/soundcloud": "^1.1.0",
+    "@distube/spotify": "^1.1.0",
+    "@distube/yt-dlp": "^0.0.2",
     "@ksoft/api": "^3.1.9",
     "colors": "^1.4.0",
     "cpu-stat": "^2.0.1",
-    "discord.js": "^13.3.1",
-    "distube": "^3.0.4",
+    "discord.js": "^13.6.0",
+    "distube": "^3.2.2",
     "ejs": "^3.1.6",
     "enmap": "^5.8.7",
     "express": "^4.17.2",
     "express-session": "^1.17.2",
-    "ffmpeg-static": "^4.4.0",
+    "ffmpeg-static": "^4.4.1",
     "libsodium-wrappers": "^0.7.9",
     "memorystore": "^1.6.6",
-    "moment": "^2.29.1",
+    "node-opus": "^0.3.3",
     "passport": "^0.5.2",
-    "passport-discord": "^0.1.4",
-    "weather-js": "^2.0.0"
+    "passport-discord": "^0.1.4"
   }
 }

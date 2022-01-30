@@ -1,1 +1,0 @@
-npx node index.js
