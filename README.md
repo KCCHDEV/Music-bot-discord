@@ -1,11 +1,16 @@
-# MusicBot Distube By KCCH & Tomato6966
-อัพเดท Module ให้แล้วนะคับ
+## MusicBot Distube By KCCH & Tomato6966
 
-# ใช้บน Replit ไม่ได้นะคับ
+**อัพเดท Module ให้แล้วนะคับ**
 
-
-
+# >ใช้บน Replit ไม่ได้นะคับ<
 
 
-# Ram ขั้นต่ำ 512mb Cpu 2.00gh 50% disk 2gb จะลื่นนะคับ
-# ต้องใช้ Node16+
+
+
+
+### spec server ขั้นต่ำ
+ - Ram ขั้นต่ำ 512mb 
+ - Cpu 2.00gh 50% 
+ - disk 2gb 
+ __จะลื่นนะคับ__
+### ต้องใช้ Node16+
