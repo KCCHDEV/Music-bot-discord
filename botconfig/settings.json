@@ -1,5 +1,5 @@
 {
-    "ownerIDS": [""],
+    "ownerIDS": ["you id"],
     "default_cooldown_in_sec" : 1.5,
     "antiCrash": true,
     "ping_message": true,
