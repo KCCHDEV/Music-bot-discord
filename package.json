@@ -1,4 +1,8 @@
 {
+  "name": "DAL OLD CODE",
+  "version": "1.89A",
+  "description": "สามารถนำไปใช้งานได้ตามสบาย",
+  "main": "index.js",
   "dependencies": {
     "@discordjs/opus": "^0.7.0",
     "@discordjs/voice": "^0.8.0",
